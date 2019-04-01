@@ -1,0 +1,29 @@
+<div class="container mt-5">
+<h3>Create Tv</h3>
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" class="mt-4">
+    <div *ngFor="let e of paramRows">
+      <div class="row mt-3">
+        <select name="tvParam+{{paramIndex}}}" class="form-control col-md-3" [(ngModel)]="selectedParam[e]">
+          <option *ngFor="let param of parametrs">{{param}}</option>
+        </select>
+        <div class="col" *ngIf="selectedParam[paramIndex]=='Condition'">
+          <select name="tvParamCondition" class="form-control" [(ngModel)] = "paramet[e]" >
+            <option>Working</option>
+            <option>Broken</option>
+          </select>
+        </div>
+        <div class="col" *ngIf="selectedParam[paramIndex]!='Condition'">
+          <input type="text" class="form-control" name="tvParamValue" [(ngModel)] = "paramet[e]">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <a href="/list">Go to List</a>
+</div>
+</div>
