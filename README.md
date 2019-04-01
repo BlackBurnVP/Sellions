@@ -1,4 +1,4 @@
 # Sellions_task
 
 
-FrontEnd located in Sellions_task/src/main/resources/frontend/angular-app
+FrontEnd located in Sellions_task/src/main/resources/frontend/
